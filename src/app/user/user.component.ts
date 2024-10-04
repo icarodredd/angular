@@ -12,6 +12,6 @@ export class UserComponent {
   @Input({ required: true }) name!: string;
 
   get imagePath() {
-    return "public/" + this.avatar;
+    return "users/" + this.avatar;
   }
 }
