@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { DUMMY_USERS } from "../dummy-users";
+import { dummyTasks } from "../dummy-tasks";
 import { TaskComponent } from "./task/task.component";
 
 @Component({
@@ -11,6 +12,7 @@ import { TaskComponent } from "./task/task.component";
 })
 export class TasksComponent {
   @Input({ required: true }) id!: string;
+  tasks = dummyTasks;
 
   get name() {
     return DUMMY_USERS.find((user) => user.id === this.id)?.name;

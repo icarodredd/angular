@@ -5,6 +5,14 @@
   </header>
 
   <ul>
-    <li><app-task /></li>
+    @for (task of tasks; track task.id) {
+    <li>
+      <app-task
+        [title]="task.title"
+        [dueDate]="task.dueDate"
+        [summary]="task.summary"
+      />
+    </li>
+    }
   </ul>
 </section>
