@@ -12,5 +12,5 @@
     </li>
     }
   </ul>
-  <app-tasks [id]="id" />
+  @if (id) { <app-tasks [id]="id" />}
 </main>
