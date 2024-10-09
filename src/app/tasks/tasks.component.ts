@@ -35,4 +35,9 @@ export class TasksComponent {
   onCancelAddTask() {
     this.isAddingTask = false;
   }
+
+  onAddTask({ title, summary, dueDate }: { title: string; summary: string; dueDate: string }) {
+    this.tasks.push({ id: crypto.randomUUID(), title, summary, dueDate, userId: this.selectedUserId });
+    this.isAddingTask = false;
+  }
 }
