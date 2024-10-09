@@ -12,7 +12,7 @@
     </li>
     }
   </ul>
-  @if (id) { <app-tasks [id]="id" />} @else {
+  @if (id) { <app-tasks [selectedUserId]="id" />} @else {
   <div id="fallback">No user selected.</div>
   }
 </main>

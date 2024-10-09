@@ -11,10 +11,14 @@ import { TaskComponent } from "./task/task.component";
   styleUrl: "./tasks.component.css",
 })
 export class TasksComponent {
-  @Input({ required: true }) id!: string;
+  @Input({ required: true }) selectedUserId!: string;
   tasks = dummyTasks;
 
   get name() {
-    return DUMMY_USERS.find((user) => user.id === this.id)?.name;
+    return DUMMY_USERS.find((user) => user.id === this.selectedUserId)?.name;
+  }
+
+  get userTasks() {
+    return this.tasks.filter((task) => task.userId === this.selectedUserId);
   }
 }

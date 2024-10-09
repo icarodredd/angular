@@ -5,7 +5,7 @@
   </header>
 
   <ul>
-    @for (task of tasks; track task.id) {
+    @for (task of userTasks; track task.id) {
     <li>
       <app-task
         [title]="task.title"
