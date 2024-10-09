@@ -5,6 +5,7 @@
     <p>
       <label for="title">Title</label>
       <input
+        [(ngModel)]="enteredTitle"
         type="text"
         id="title"
         name="title"
@@ -14,6 +15,7 @@
     <p>
       <label for="summary">Summary</label>
       <textarea
+        [(ngModel)]="enteredSummary"
         id="summary"
         rows="5"
         name="summary"
@@ -23,6 +25,7 @@
     <p>
       <label for="due-date">Due Date</label>
       <input
+        [(ngModel)]="enteredDueDate"
         type="date"
         id="due-date"
         name="due-date"
