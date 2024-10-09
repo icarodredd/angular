@@ -8,6 +8,8 @@
     @for (task of userTasks; track task.id) {
     <li>
       <app-task
+        (complete)="onCompleteTask($event)"
+        [id]="task.id"
         [title]="task.title"
         [dueDate]="task.dueDate"
         [summary]="task.summary"
