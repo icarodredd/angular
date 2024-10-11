@@ -20,10 +20,6 @@ export class TasksComponent {
     return DUMMY_USERS.find((user) => user.id === this.selectedUserId)?.name;
   }
 
-  get userTasks() {
-    return this.tasks.filter((task) => task.userId === this.selectedUserId);
-  }
-
   onCompleteTask(taskId: string) {
     return (this.tasks = this.tasks.filter((task) => task.id !== taskId));
   }
