@@ -17,6 +17,7 @@ export class NewTaskComponent {
   enteredTitle = "";
   enteredSummary = "";
   enteredDueDate = "";
+  userId = "";
 
   onCancel() {
     return this.cancel.emit();
@@ -27,7 +28,8 @@ export class NewTaskComponent {
       title: this.enteredTitle,
       summary: this.enteredSummary,
       dueDate: this.enteredDueDate,
-      userId: crypto.randomUUID(),
+      userId: this.userId,
     });
+    this.cancel.emit();
   }
 }

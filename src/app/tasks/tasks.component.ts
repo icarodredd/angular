@@ -34,6 +34,4 @@ export class TasksComponent {
   onCancelAddTask() {
     this.isAddingTask = false;
   }
-
-  onAddTask({ title, summary, dueDate }: { title: string; summary: string; dueDate: string }) {}
 }
