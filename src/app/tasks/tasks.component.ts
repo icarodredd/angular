@@ -21,6 +21,10 @@ export class TasksComponent {
     return DUMMY_USERS.find((user) => user.id === this.selectedUserId)?.name;
   }
 
+  get userTasks() {
+    return this.tasksService.getUserTasks(this.selectedUserId);
+  }
+
   onCompleteTask(taskId: string) {}
 
   onStartAddTask() {
