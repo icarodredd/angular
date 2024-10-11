@@ -11,7 +11,6 @@ import { TasksService } from "../tasks.service";
 })
 export class NewTaskComponent {
   @Output() cancel = new EventEmitter();
-  @Output() add = new EventEmitter<{ title: string; summary: string; dueDate: string }>();
 
   private tasksService = inject(TasksService);
 
