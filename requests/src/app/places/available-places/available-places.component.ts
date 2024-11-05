@@ -22,8 +22,20 @@ export class AvailablePlacesComponent implements OnInit {
     const subscription = this.httpClient.get<{ places: Place[] }>("http://localhost:3000/places").subscribe({
       next: (res) => this.places.set(res.places),
       complete: () => this.isFecthing.set(false),
+      error: (error) => console.log(error),
     });
 
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
+  }
+
+  onSelectPlace(place: Place) {
+    this.httpClient
+      .put("http://localhost:3000/user-places", {
+        placeId: place.id,
+      })
+      .subscribe({
+        next: (res) => console.log(res),
+        error: (error) => console.log(error),
+      });
   }
 }
