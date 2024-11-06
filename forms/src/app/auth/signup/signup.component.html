@@ -15,7 +15,10 @@
     />
   </div>
 
-  <div class="control-row">
+  <div
+    class="control-row"
+    formGroupName="passwords"
+  >
     <div class="control">
       <label for="password">Password</label>
       <input
@@ -47,6 +50,7 @@
           type="text"
           id="first-name"
           name="first-name"
+          formControlName="firstName"
         />
       </div>
 
@@ -56,11 +60,12 @@
           type="text"
           id="last-name"
           name="last-name"
+          formControlName="lastName"
         />
       </div>
     </div>
 
-    <fieldset>
+    <fieldset formGroupName="address">
       <legend>Your Address</legend>
 
       <div class="control-row">
@@ -70,6 +75,7 @@
             type="text"
             id="street"
             name="street"
+            formControlName="street"
           />
         </div>
 
@@ -79,6 +85,7 @@
             type="text"
             id="number"
             name="number"
+            formControlName="number"
           />
         </div>
       </div>
@@ -90,6 +97,7 @@
             type="text"
             id="postal-code"
             name="postal-code"
+            formGroupName="postalCode"
           />
         </div>
 
@@ -99,6 +107,7 @@
             type="text"
             id="city"
             name="city"
+            formControlName="city"
           />
         </div>
       </div>
@@ -111,6 +120,7 @@
     <div class="control">
       <label for="role">What best describes your role?</label>
       <select
+        formControlName="role"
         id="role"
         name="role"
       >
@@ -123,10 +133,11 @@
     </div>
   </div>
 
-  <fieldset>
+  <fieldset formArrayName="source">
     <legend>How did you find us?</legend>
     <div class="control">
       <input
+        formControlName="0"
         type="checkbox"
         id="google"
         name="acquisition"
@@ -137,6 +148,7 @@
 
     <div class="control">
       <input
+        formControlName="1"
         type="checkbox"
         id="friend"
         name="acquisition"
@@ -147,6 +159,7 @@
 
     <div class="control">
       <input
+        formControlName="2"
         type="checkbox"
         id="other"
         name="acquisition"
@@ -160,6 +173,7 @@
     <div class="control">
       <label for="terms-and-conditions">
         <input
+          formControlName="agree"
           type="checkbox"
           id="terms-and-conditions"
           name="terms"
